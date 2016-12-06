@@ -7,72 +7,80 @@ describe('Kata', function() {
       expect(true).toBeTruthy();
     });
 
-    describe ('sum', function(){
-        it('of 3 and 0 should return 3', function() {
+    describe ('sum of', function(){
+        it('3 and 0 should return 3', function() {
             expect(sum('3','0')).toEqual('3','sum(3,0) should return 3.');
         });
 
-        it('of 0 and 3 should return 3', function() {
+        it('0 and 3 should return 3', function() {
             expect(sum('0','3')).toEqual('3','sum(0,3) should return 3.');
         });
 
-        it('of 2 and 3  should return 5', function() {
+        it('2 and 3  should return 5', function() {
             expect(sum('2','3')).toEqual('5','sum(2,3) should return 5.');
         });
 
-        it('of 20 and 3 should return 23', function() {
+        it('20 and 3 should return 23', function() {
             expect(sum('20','3')).toEqual('23','sum(20,3) should return 23.');
         });
 
-        it('of 20 and 310 should return 330', function() {
+        it('20 and 310 should return 330', function() {
             expect(sum('20','310')).toEqual('330','sum(20,310) should return 330.');
         });
 
-        it('of 36543 and 692 should return 37235', function() {
+        it('36543 and 692 should return 37235', function() {
             expect(sum('36543','692')).toEqual('37235','sum(36543,693) should return 37235.');
         });
     });
 
-    describe ('mult', function(){          
-        it('of 0 and 3 should return 0', function() {
+    describe ('mult of', function(){          
+        it('0 and 3 should return 0', function() {
           expect(mult('0','3')).toEqual('0','mult(0,3) should return 0.');
         });
 
-        it('of 2 and 0 should return 0', function() {
+        it('2 and 0 should return 0', function() {
           expect(mult('2','0')).toEqual('0','mult(2,0) should return 0.');
         });
 
-        it('of 2 and 3 should return 6', function() {
+        it('2 and 3 should return 6', function() {
           expect(mult('2','3')).toEqual('6','mult(2,3) should return 6.');
         });        
 
-        it('of 3 and 12 should return 36', function() {
+        it('3 and 12 should return 36', function() {
           expect(mult('3','12')).toEqual('36','mult(3,12) should return 36.');
         });
 
-        it('of 3 and 19 should return 57', function() {
+        it('3 and 19 should return 57', function() {
           expect(mult('3','19')).toEqual('57','mult(3,19) should return 57.');
         });
 
-        it('of 3 and 890 should return 2670', function() {
+        it('3 and 890 should return 2670', function() {
           expect(mult('3','890')).toEqual('2670','mult(3,890) should return 2670.');
         });
 
-        it('of 3 and 9999 should return 29997', function() {
+        it('3 and 9999 should return 29997', function() {
           expect(mult('3','9999')).toEqual('29997','mult(3,9999) should return 29997.');
         });
 
-        it('of 12 and 3 should return 36', function() {
+        it('12 and 3 should return 36', function() {
           expect(mult('12','3')).toEqual('36','mult(12,3) should return 36.');
         });
 
-        it('of 12 and 3 should return 36', function() {
+        it('12 and 3 should return 36', function() {
           expect(mult('12','3')).toEqual('36','mult(12,3) should return 36.');
         });
 
-        it('of 25 and 15511210043330985984000000 should return 15511210043330985984000000', function() {
-          expect(mult('25','15511210043330985984000000')).toEqual('15511210043330985984000000',
-              'mult(25,15511210043330985984000000) should return 15511210043330985984000000.');
+        it('12 and 34 should return 408', function() {
+          expect(mult('12','34')).toEqual('408','mult(12,34) should return 408.');
+        });
+
+        it('67 and 89 should return 5963', function() {
+          expect(mult('67','89')).toEqual('5963','mult(67,89) should return 5963.');
+        });
+
+        it('25 and 620448401733239439360000 should return 15511210043330985984000000', function() {
+          expect(mult('25','620448401733239439360000')).toEqual('15511210043330985984000000',
+              'mult(25,620448401733239439360000) should return 15511210043330985984000000.');
         });
     });
 
@@ -125,7 +133,14 @@ describe('Kata', function() {
           expect(factorial(25)).toEqual('15511210043330985984000000','25! should be 15511210043330985984000000.');
         });
 
-        
+        it('120 should be calulated. (Number of digits: 199 )', function() {
+          var result = factorial(120);
+          expect(result).toEqual(
+            '66895029134491270575881180540903725867527463331380298102956713523016335572449629893668741'+
+            '65271984981308157637893214090552534408589408121859898481114389650005964960521256960000000'+
+            '000000000000000000000','120! should be calculated.');
+          expect(result.length).toEqual(199,'Number of digits of 120! is not correct.')
+        });
 
     });
 });

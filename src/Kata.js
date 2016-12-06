@@ -13,31 +13,32 @@ function factor(n) {
     return result;
 }
 
-function mult (n1,n2){
+function mult(n1,n2) {
     var num1 = n1.split('').reverse(),
         num2 = n2.split('').reverse(),
         base = 10, carry =0, value = 0, offset = 0,
         total = '0', result;
     
-    num1.forEach(function(digitInNum1){
+    num1.forEach( function(digitInNum1) {
         result = [];
         for (var f=0; f<offset; f++){
             result.push('0');
         }
         offset++;
-        num2.forEach(function(digitInNum2){
-            value = digitInNum1*(parseInt(digitInNum2)+carry);
+        num2.forEach( function(digitInNum2) {
+            value = digitInNum1*parseInt(digitInNum2)+carry;
             carry = Math.floor(value/base);
             digit = value % base;
             result.push(digit);
         });
         if (carry > 0) result.push(carry);
+        carry = 0;
         total = sum(result.reverse().join(''),total);    
     });    
     return total;
 }
 
-function sum (n1,n2){
+function sum(n1,n2) {
     var num1 = n1.split('').reverse(),
         num2 = n2.split('').reverse(),
         digit, base = 10,
@@ -55,7 +56,7 @@ function sum (n1,n2){
         }
     }
 
-    for (var i=0; i<num1.length; i++){
+    for (var i=0; i<num1.length; i++) {
         value = parseInt(num1[i])+parseInt(num2[i])+carry;
         carry = Math.floor(value/base);
         digit = value % base;
@@ -65,11 +66,3 @@ function sum (n1,n2){
     
     return result.reverse().join('');
 }
-
-/*
-
-34563
-29600
-53273 -> 37325
-
-*/
